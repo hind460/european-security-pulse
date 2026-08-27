@@ -37,7 +37,7 @@ export function SiteFooter() {
               International Security Hub
             </span>
           </div>
-          <p className="mt-4 text-xs tracking-[0.14em] text-slate uppercase">
+          <p className="mt-4 text-xs tracking-[0.14em] text-night-foreground uppercase">
             Independent · European · Evidence-led
           </p>
         </div>
@@ -100,7 +100,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-slate/25">
-        <div className="mx-auto max-w-[1440px] px-5 py-6 text-xs text-slate md:px-10">
+        <div className="mx-auto max-w-[1440px] px-5 py-6 text-xs text-night-foreground md:px-10">
           International Security Hub curates and links to reporting published by
           external organisations. External articles remain the work of their
           publishers and are not presented as original ISH reporting.

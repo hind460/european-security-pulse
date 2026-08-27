@@ -73,7 +73,7 @@ export function Newsletter() {
                   aria-invalid={!!error}
                   aria-describedby={error ? "newsletter-error" : "newsletter-privacy"}
                   placeholder="name@organisation.eu"
-                  className="min-h-11 w-full border border-mist/30 bg-night px-4 py-2.5 text-sm text-ink-foreground placeholder:text-slate focus:border-signal focus:outline-none"
+                  className="min-h-11 w-full border border-mist/30 bg-night px-4 py-2.5 text-sm text-ink-foreground placeholder:text-mist/70 focus:border-signal focus:outline-none"
                 />
                 <button
                   type="submit"
@@ -87,7 +87,7 @@ export function Newsletter() {
                   {error}
                 </p>
               )}
-              <p id="newsletter-privacy" className="text-xs leading-relaxed text-slate">
+              <p id="newsletter-privacy" className="text-xs leading-relaxed text-mist">
                 We use your address only to send the Brief. No third-party sharing,
                 unsubscribe at any time.
               </p>
