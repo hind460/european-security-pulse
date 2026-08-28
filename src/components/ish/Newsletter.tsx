@@ -37,7 +37,7 @@ export function Newsletter() {
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-mist">
             Essential cybersecurity policy, innovation and leadership
-            intelligence—delivered every weekday morning.
+            intelligence—delivered every month.
           </p>
         </div>
 
