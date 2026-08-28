@@ -358,8 +358,12 @@ function Index() {
                   className="grid gap-3 border-b border-border py-6 transition-colors hover:bg-card md:grid-cols-[1.4fr_1fr_1fr] md:items-center"
                 >
                   <div>
-                    <span className="border border-border px-2 py-0.5 text-[10px] tracking-[0.12em] text-muted-foreground uppercase">
-                      
+                    <span className="inline-flex h-3 w-5 overflow-hidden rounded-[2px] border border-border" aria-label="Netherlands" role="img">
+                      <span className="flex flex-col w-full">
+                        <span className="block h-1/3 w-full bg-[#AE1C28]" />
+                        <span className="block h-1/3 w-full bg-[#FFFFFF]" />
+                        <span className="block h-1/3 w-full bg-[#21468B]" />
+                      </span>
                     </span>
                     <h3 className="mt-2 font-serif text-xl font-bold">{e.title}</h3>
                   </div>
