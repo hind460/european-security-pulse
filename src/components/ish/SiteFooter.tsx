@@ -1,5 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
-import logo from "@/assets/ish-lockup-light.svg.asset.json";
+import logo from "@/assets/ish-mark-2026.svg.asset.json";
 import { navHref } from "@/data/ish";
 
 const sections = [
@@ -27,11 +27,11 @@ export function SiteFooter() {
           <div className="flex flex-col items-start gap-4">
             <img
               src={logo.url}
-              alt="International Security Hub logo: red heart emblem beside the letters ISH"
-              width={951}
-              height={288}
+              alt="International Security Hub logo: red heart emblem"
+              width={989}
+              height={1245}
               loading="lazy"
-              className="h-10 w-auto"
+              className="h-14 w-auto"
             />
             <span className="font-serif text-lg leading-tight font-bold text-card">
               International Security Hub
