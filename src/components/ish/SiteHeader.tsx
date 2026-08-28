@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
-import logo from "@/assets/ish-logo.svg.asset.json";
+import logo from "@/assets/ish-lockup.svg.asset.json";
 import { navHref, navItems } from "@/data/ish";
 
 function useToday() {
@@ -52,11 +52,12 @@ export function SiteHeader() {
           <a href="#top" className="flex items-center gap-4">
             <img
               src={logo.url}
-              alt="International Security Hub heart emblem"
-              width={49}
-              height={62}
-              className="h-12 w-auto md:h-16"
+              alt="International Security Hub logo: red heart emblem beside the letters ISH"
+              width={951}
+              height={288}
+              className="h-9 w-auto md:h-12"
             />
+
             <span className="block">
               <span className="block font-serif text-lg leading-tight font-bold tracking-tight md:text-2xl">
                 International Security Hub
