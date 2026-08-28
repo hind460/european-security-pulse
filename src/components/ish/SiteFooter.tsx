@@ -24,14 +24,14 @@ export function SiteFooter() {
     <footer className="bg-night text-night-foreground">
       <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-14 md:grid-cols-2 md:px-10 lg:grid-cols-4">
         <div>
-          <div className="flex flex-col items-start gap-4">
+          <div className="flex items-center gap-3">
             <img
               src={logo.url}
               alt="International Security Hub logo: red heart emblem"
               width={989}
               height={1245}
               loading="lazy"
-              className="h-14 w-auto"
+              className="h-14 w-auto shrink-0"
             />
             <span className="font-serif text-lg leading-tight font-bold text-card">
               International Security Hub
