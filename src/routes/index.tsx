@@ -74,7 +74,7 @@ function Index() {
                   className="inline-flex items-center gap-1 text-sm font-bold text-signal"
                 >
                   Read at {leadStory.publisher}
-                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                  <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                 </a>
               </div>
               <figure className="mt-7">
@@ -217,7 +217,7 @@ function Index() {
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-signal uppercase"
                   >
-                    Read at Wavestone <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                    Read at Wavestone <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -245,7 +245,7 @@ function Index() {
                     className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-signal uppercase"
                   >
                     Read at European Commission
-                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                    <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -273,7 +273,7 @@ function Index() {
                     className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-signal uppercase"
                   >
                     Read at European Commission
-                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                    <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -297,7 +297,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-1 text-xs font-bold text-signal uppercase"
                 >
-                  Read at ENISA <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                  Read at ENISA <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                 </a>
               </article>
             </div>
@@ -364,11 +364,11 @@ function Index() {
                     <h3 className="mt-2 font-serif text-xl font-bold">{e.title}</h3>
                   </div>
                   <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="size-4" aria-hidden="true" />
+                    <MapPin className="size-4 shrink-0" aria-hidden="true" />
                     {e.city} · {e.format}
                   </p>
                   <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CalendarDays className="size-4" aria-hidden="true" />
+                    <CalendarDays className="size-4 shrink-0" aria-hidden="true" />
                     {e.date} · {e.topic}
                   </p>
                 </li>
