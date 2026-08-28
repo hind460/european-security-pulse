@@ -39,7 +39,7 @@ export function SiteFooter() {
           </div>
 
           <p className="mt-4 text-xs tracking-[0.14em] text-night-foreground uppercase">
-            Independent · European · Evidence-led
+            INDEPENDENT · EUROPEAN BASED · EVIDENCE-LED
           </p>
         </div>
 

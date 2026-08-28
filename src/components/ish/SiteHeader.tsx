@@ -63,7 +63,9 @@ export function SiteHeader() {
                 International Security Hub
               </span>
               <span className="mt-1 block text-[9px] font-semibold tracking-[0.2em] text-muted-foreground uppercase md:text-[10px]">
-                The European cybersecurity press platform
+                THE EUROPEAN BASED CYBERSECURITY PRESS PLATFORM
+                <br />
+                CONNECTING GLOBAL MINDS, EMPOWERING HUMAN FREEDOM
               </span>
             </span>
           </a>

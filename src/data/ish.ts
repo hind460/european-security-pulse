@@ -160,18 +160,18 @@ export const trackerItems = [
 
 export const events = [
   {
-    title: "EU Cybersecurity Policy Forum",
-    city: "Brussels",
-    date: "Sample event · date to be confirmed",
+    title: "Cybersec Netherlands 2026",
+    city: "Utrecht",
+    date: "8th and 9th September",
     format: "In person",
-    topic: "Regulation and enforcement",
+    topic: "",
   },
   {
-    title: "Critical Infrastructure Leaders' Briefing",
-    city: "Warsaw",
-    date: "Sample event · date to be confirmed",
-    format: "Hybrid",
-    topic: "Resilience and continuity",
+    title: "IT Security Expo and Congress\u00a0",
+    city: "Nuremberg",
+    date: "27th to 29th October \u00a0",
+    format: "In person",
+    topic: "Full spectrum of products and services in cybersecurity",
   },
   {
     title: "European Cyber Innovation Summit",
