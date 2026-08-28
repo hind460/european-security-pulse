@@ -1,5 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
-import logo from "@/assets/ish-lockup.svg.asset.json";
+import logo from "@/assets/ish-lockup-light.svg.asset.json";
 import { navHref } from "@/data/ish";
 
 const sections = [
@@ -31,7 +31,7 @@ export function SiteFooter() {
               width={951}
               height={288}
               loading="lazy"
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto"
             />
             <span className="font-serif text-lg leading-tight font-bold text-card">
               International Security Hub
