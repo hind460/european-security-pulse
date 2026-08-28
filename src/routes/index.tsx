@@ -359,7 +359,7 @@ function Index() {
                 >
                   <div>
                     <span className="border border-border px-2 py-0.5 text-[10px] tracking-[0.12em] text-muted-foreground uppercase">
-                      Sample event
+                      
                     </span>
                     <h3 className="mt-2 font-serif text-xl font-bold">{e.title}</h3>
                   </div>
@@ -411,7 +411,7 @@ function Index() {
             </div>
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                International Security Hub is an independent press platform covering
+                 International Security Hub is an independent knowledge hub covering
                 cybersecurity regulation, innovation, experts, events and organisations
                 across Europe and beyond.
               </p>
