@@ -76,7 +76,7 @@ export function SiteHeader() {
               The Global Security Brief
             </span>
             <span className="mt-1 block text-xs text-muted-foreground">
-              Policy, innovation and leadership intelligence, every weekday morning.
+              Policy, innovation and leadership intelligence, every month.
             </span>
           </a>
 
