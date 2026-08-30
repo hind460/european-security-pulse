@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import logo from "@/assets/ish-heart.svg.asset.json";
 import { navHref, navItems } from "@/data/ish";
+import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";
 
 function useToday() {
   const [today, setToday] = useState("");
@@ -37,9 +38,9 @@ export function SiteHeader() {
           </p>
           <p className="hidden sm:block">{today}</p>
           <div className="flex items-center gap-5">
-            <a href="#about" className="link-underline hover:text-card">
+            <SubmitNewsDialog className="link-underline uppercase hover:text-card">
               Submit News
-            </a>
+            </SubmitNewsDialog>
             <a href="#newsletter" className="link-underline hover:text-card">
               Newsletter
             </a>
