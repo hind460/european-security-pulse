@@ -165,6 +165,7 @@ export const events = [
     date: "8th and 9th September",
     format: "In person",
     topic: "",
+    country: "NL",
   },
   {
     title: "IT Security Expo and Congress\u00a0",
@@ -172,6 +173,7 @@ export const events = [
     date: "27th to 29th October \u00a0",
     format: "In person",
     topic: "Full spectrum of products and services in cybersecurity",
+    country: "DE",
   },
   {
     title: "European Cyber Innovation Summit",
@@ -179,6 +181,7 @@ export const events = [
     date: "Sample event · date to be confirmed",
     format: "In person",
     topic: "Start-ups and emerging technology",
+    country: "EE",
   },
 ];
 
