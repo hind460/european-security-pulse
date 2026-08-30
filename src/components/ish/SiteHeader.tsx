@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import logo from "@/assets/ish-heart.svg.asset.json";
 import { navHref, navItems } from "@/data/ish";
+import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";
 
 function useToday() {
   const [today, setToday] = useState("");
