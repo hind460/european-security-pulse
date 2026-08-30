@@ -358,13 +358,37 @@ function Index() {
                   className="grid gap-3 border-b border-border py-6 transition-colors hover:bg-card md:grid-cols-[1.4fr_1fr_1fr] md:items-center"
                 >
                   <div>
-                    <span className="inline-flex h-3 w-5 overflow-hidden rounded-[2px] border border-border" aria-label="Netherlands" role="img">
-                      <span className="flex flex-col w-full">
-                        <span className="block h-1/3 w-full bg-[#AE1C28]" />
-                        <span className="block h-1/3 w-full bg-[#FFFFFF]" />
-                        <span className="block h-1/3 w-full bg-[#21468B]" />
+                    {e.country && (
+                      <span
+                        className="inline-flex h-3 w-5 overflow-hidden rounded-[2px] border border-border"
+                        aria-label={e.country === "NL" ? "Netherlands" : e.country === "DE" ? "Germany" : e.country === "EE" ? "Estonia" : e.country}
+                        role="img"
+                      >
+                        <span className="flex flex-col w-full">
+                          {e.country === "NL" && (
+                            <>
+                              <span className="block h-1/3 w-full bg-[#AE1C28]" />
+                              <span className="block h-1/3 w-full bg-[#FFFFFF]" />
+                              <span className="block h-1/3 w-full bg-[#21468B]" />
+                            </>
+                          )}
+                          {e.country === "DE" && (
+                            <>
+                              <span className="block h-1/3 w-full bg-[#000000]" />
+                              <span className="block h-1/3 w-full bg-[#DD0000]" />
+                              <span className="block h-1/3 w-full bg-[#FFCE00]" />
+                            </>
+                          )}
+                          {e.country === "EE" && (
+                            <>
+                              <span className="block h-1/3 w-full bg-[#0072CE]" />
+                              <span className="block h-1/3 w-full bg-[#000000]" />
+                              <span className="block h-1/3 w-full bg-[#FFFFFF]" />
+                            </>
+                          )}
+                        </span>
                       </span>
-                    </span>
+                    )}
                     <h3 className="mt-2 font-serif text-xl font-bold">{e.title}</h3>
                   </div>
                   <p className="flex items-center gap-2 text-sm text-muted-foreground">
