@@ -37,9 +37,9 @@ export function SiteHeader() {
           </p>
           <p className="hidden sm:block">{today}</p>
           <div className="flex items-center gap-5">
-            <a href="#about" className="link-underline hover:text-card">
+            <SubmitNewsDialog className="link-underline uppercase hover:text-card">
               Submit News
-            </a>
+            </SubmitNewsDialog>
             <a href="#newsletter" className="link-underline hover:text-card">
               Newsletter
             </a>
