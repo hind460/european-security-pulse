@@ -1,5 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/ish-mark-2026.svg.asset.json";
+import editorialStandards from "@/assets/ISH-Editorial-Standards.pdf.asset.json";
 import { navHref } from "@/data/ish";
 
 const sections = [
