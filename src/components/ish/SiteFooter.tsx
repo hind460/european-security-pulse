@@ -1,5 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/ish-mark-2026.svg.asset.json";
+import editorialStandards from "@/assets/ISH-Editorial-Standards.pdf.asset.json";
 import { navHref } from "@/data/ish";
 
 const sections = [
@@ -17,7 +18,12 @@ const sections = [
   },
 ];
 
-const policies = ["Editorial standards", "Corrections", "Privacy", "Contact"];
+const policies = [
+  { label: "Editorial standards", href: editorialStandards.url, external: true },
+  { label: "Corrections", href: "#about" },
+  { label: "Privacy", href: "#about" },
+  { label: "Contact", href: "#about" },
+];
 
 export function SiteFooter() {
   return (
@@ -66,9 +72,14 @@ export function SiteFooter() {
           </h2>
           <ul className="mt-4 space-y-2 text-sm">
             {policies.map((l) => (
-              <li key={l}>
-                <a href="#about" className="link-underline hover:text-card">
-                  {l}
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  target={l.external ? "_blank" : undefined}
+                  rel={l.external ? "noopener noreferrer" : undefined}
+                  className="link-underline hover:text-card"
+                >
+                  {l.label}
                 </a>
               </li>
             ))}
