@@ -169,7 +169,7 @@ export function SubmitNewsDialog({
                     ))}
                   </SelectContent>
                 </Select>
-                {errors.type && <p className={errClass}>{errors.type}</p>}
+                {errors['type'] && <p className={errClass}>{errors['type']}</p>}
               </div>
 
               {type === "Other" && (
@@ -183,7 +183,7 @@ export function SubmitNewsDialog({
                     className={fieldClass}
                     placeholder="Tell us what kind of contribution this is"
                   />
-                  {errors.otherType && <p className={errClass}>{errors.otherType}</p>}
+                  {errors['otherType'] && <p className={errClass}>{errors['otherType']}</p>}
                 </div>
               )}
 
@@ -196,7 +196,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Title of your contribution"
                 />
-                {errors.title && <p className={errClass}>{errors.title}</p>}
+                {errors['title'] && <p className={errClass}>{errors['title']}</p>}
               </div>
 
               <div>
@@ -209,7 +209,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="you@example.com"
                 />
-                {errors.email && <p className={errClass}>{errors.email}</p>}
+                {errors['email'] && <p className={errClass}>{errors['email']}</p>}
               </div>
 
               <div>
@@ -221,7 +221,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Full name"
                 />
-                {errors.author && <p className={errClass}>{errors.author}</p>}
+                {errors['author'] && <p className={errClass}>{errors['author']}</p>}
               </div>
 
               <div>
@@ -233,7 +233,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="https://www.linkedin.com/in/…"
                 />
-                {errors.linkedin && <p className={errClass}>{errors.linkedin}</p>}
+                {errors['linkedin'] && <p className={errClass}>{errors['linkedin']}</p>}
               </div>
 
               <button
