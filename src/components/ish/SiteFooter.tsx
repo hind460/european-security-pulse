@@ -72,9 +72,14 @@ export function SiteFooter() {
           </h2>
           <ul className="mt-4 space-y-2 text-sm">
             {policies.map((l) => (
-              <li key={l}>
-                <a href="#about" className="link-underline hover:text-card">
-                  {l}
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  target={l.external ? "_blank" : undefined}
+                  rel={l.external ? "noopener noreferrer" : undefined}
+                  className="link-underline hover:text-card"
+                >
+                  {l.label}
                 </a>
               </li>
             ))}
