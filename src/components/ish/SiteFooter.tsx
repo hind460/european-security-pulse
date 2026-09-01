@@ -18,7 +18,12 @@ const sections = [
   },
 ];
 
-const policies = ["Editorial standards", "Corrections", "Privacy", "Contact"];
+const policies = [
+  { label: "Editorial standards", href: editorialStandards.url, external: true },
+  { label: "Corrections", href: "#about" },
+  { label: "Privacy", href: "#about" },
+  { label: "Contact", href: "#about" },
+];
 
 export function SiteFooter() {
   return (
