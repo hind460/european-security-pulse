@@ -19,7 +19,7 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-  { label: "Corrections", href: "#about" },
+  
   { label: "Privacy", href: "#about" },
   { label: "Contact", href: "#about" },
 ];
