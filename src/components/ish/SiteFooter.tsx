@@ -1,6 +1,8 @@
 import { Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/ish-mark-2026.svg.asset.json";
 import { navHref } from "@/data/ish";
+import { ContactDialog } from "./ContactDialog";
+
 
 const sections = [
   {
@@ -19,10 +21,9 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-  
   { label: "Privacy", href: "#about" },
-  { label: "Contact", href: "#about" },
 ];
+
 
 export function SiteFooter() {
   return (
