@@ -10,44 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiPublicEditorialStandardsRouteImport } from './routes/api/public/editorial-standards'
+import { Route as EditorialStandardsRouteImport } from './routes/editorial-standards'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicEditorialStandardsRoute =
-  ApiPublicEditorialStandardsRouteImport.update({
-    id: '/api/public/editorial-standards',
-    path: '/api/public/editorial-standards',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const EditorialStandardsRoute = EditorialStandardsRouteImport.update({
+  id: '/editorial-standards',
+  path: '/editorial-standards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api/public/editorial-standards': typeof ApiPublicEditorialStandardsRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api/public/editorial-standards': typeof ApiPublicEditorialStandardsRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api/public/editorial-standards': typeof ApiPublicEditorialStandardsRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/editorial-standards'
+  fullPaths: '/' | '/editorial-standards'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/editorial-standards'
-  id: '__root__' | '/' | '/api/public/editorial-standards'
+  to: '/' | '/editorial-standards'
+  id: '__root__' | '/' | '/editorial-standards'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApiPublicEditorialStandardsRoute: typeof ApiPublicEditorialStandardsRoute
+  EditorialStandardsRoute: typeof EditorialStandardsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -59,11 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/editorial-standards': {
-      id: '/api/public/editorial-standards'
-      path: '/api/public/editorial-standards'
-      fullPath: '/api/public/editorial-standards'
-      preLoaderRoute: typeof ApiPublicEditorialStandardsRouteImport
+    '/editorial-standards': {
+      id: '/editorial-standards'
+      path: '/editorial-standards'
+      fullPath: '/editorial-standards'
+      preLoaderRoute: typeof EditorialStandardsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -71,7 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApiPublicEditorialStandardsRoute: ApiPublicEditorialStandardsRoute,
+  EditorialStandardsRoute: EditorialStandardsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
