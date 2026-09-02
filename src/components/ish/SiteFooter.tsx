@@ -83,7 +83,13 @@ export function SiteFooter() {
                 </a>
               </li>
             ))}
+            <li>
+              <ContactDialog className="link-underline hover:text-card text-left">
+                Contact
+              </ContactDialog>
+            </li>
           </ul>
+
         </nav>
 
         <div>
