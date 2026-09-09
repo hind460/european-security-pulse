@@ -38,7 +38,7 @@ function EditorialStandardsPage() {
             className="inline-flex min-w-0 items-center gap-3"
           >
             <img
-              src={logo.url}
+              src={logo}
               alt=""
               width={989}
               height={1245}
@@ -60,7 +60,7 @@ function EditorialStandardsPage() {
               <span className="hidden text-sm font-semibold sm:inline">Front page</span>
             </Link>
             <a
-              href={originalPdf.url}
+              href={originalPdf}
               download="ISH-Editorial-Standards.pdf"
               className="inline-flex size-10 items-center justify-center bg-primary text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto sm:gap-2 sm:px-3"
               aria-label="Download editorial standards PDF"
@@ -82,10 +82,10 @@ function EditorialStandardsPage() {
 
         <ol className="space-y-5 sm:space-y-8">
           {pages.map((page, index) => (
-            <li key={page.asset_id}>
+            <li key={index}>
               <figure>
                 <img
-                  src={page.url}
+                  src={page}
                   alt={`International Security Hub editorial standards, page ${index + 1} of ${pages.length}`}
                   width={1240}
                   height={1754}
