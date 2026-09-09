@@ -22,15 +22,8 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-<a
-  href={privacyPolicy}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Privacy
-</a>
+  { label: "Privacy", href: privacyPolicy, external: true },
 ];
-
 
 export function SiteFooter() {
   return (
