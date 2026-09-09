@@ -58,8 +58,8 @@ export const submitContactForm = createServerFn({ method: "POST" })
       consent: value(data, "consent"),
     });
 
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("contact_messages").insert({
+    const { supabase } = await import("@/integrations/supabase/client");
+    const { error } = await supabase.from("contact_messages").insert({
       name: parsed.name,
       email: parsed.email,
       message: parsed.message,
@@ -116,11 +116,11 @@ export const submitNewsForm = createServerFn({ method: "POST" })
       filePath = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}-${cleanedName}`;
     }
 
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { supabase } = await import("@/integrations/supabase/client");
 
     if (file && filePath) {
       const bytes = new Uint8Array(await file.arrayBuffer());
-      const { error: uploadError } = await supabaseAdmin.storage
+      const { error: uploadError } = await supabase.storage
         .from("news-submissions")
         .upload(filePath, bytes, {
           contentType: file.type || "application/octet-stream",
@@ -133,7 +133,7 @@ export const submitNewsForm = createServerFn({ method: "POST" })
       }
     }
 
-    const { error: insertError } = await supabaseAdmin.from("news_submissions").insert({
+    const { error: insertError } = await supabase.from("news_submissions").insert({
       type: parsed.type,
       other_type: parsed.type === "Other" ? parsed.otherType : null,
       title: parsed.title,
@@ -145,9 +145,6 @@ export const submitNewsForm = createServerFn({ method: "POST" })
     });
 
     if (insertError) {
-      if (filePath) {
-        await supabaseAdmin.storage.from("news-submissions").remove([filePath]);
-      }
       console.error("[Forms] Could not store a news submission.", insertError.code);
       throw new Error("Could not submit the news form.");
     }

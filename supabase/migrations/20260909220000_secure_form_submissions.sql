@@ -1,12 +1,5 @@
--- Contact and news submissions now go through trusted server functions.
-REVOKE INSERT ON public.contact_messages FROM anon, authenticated;
-REVOKE INSERT ON public.news_submissions FROM anon, authenticated;
-
-DROP POLICY IF EXISTS "Anyone can send a contact message" ON public.contact_messages;
-DROP POLICY IF EXISTS "Anyone can submit news" ON public.news_submissions;
-DROP POLICY IF EXISTS "Anyone can upload a submission file" ON storage.objects;
-
--- Submission files are private and can only be accessed with the service role.
+-- Keep submission files private. The existing insert-only storage policy lets
+-- the form upload files without granting public read access.
 INSERT INTO storage.buckets (
   id,
   name,

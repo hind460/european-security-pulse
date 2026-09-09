@@ -1,31 +1,28 @@
 # Form storage and email setup
 
-The website stores form submissions in Supabase. Contact and news submissions
-also trigger a private email notification through Resend. Newsletter signups are
-stored without sending an internal notification.
+The website stores form submissions in the project's Lovable Cloud database.
+Contact and news submissions also trigger a private email notification through
+Resend. Newsletter signups are stored without sending an internal notification.
 
-## 1. Apply the Supabase migrations
+## 1. Apply the Lovable Cloud migration
 
-Apply the files in `supabase/migrations` to the Supabase project used by the
-website. The latest migration creates a private `news-submissions` storage
-bucket and makes contact/news writes server-only.
+The three database tables already exist. The latest migration only creates the
+private bucket for news attachments:
 
-Using the Supabase CLI:
+1. In Lovable, open `More > Cloud > SQL editor`.
+2. Open `supabase/migrations/20260909220000_secure_form_submissions.sql` from
+   the PR's **Files changed** tab.
+3. Copy its contents into the SQL editor and run it once.
 
-```bash
-supabase link --project-ref YOUR_PROJECT_REF
-supabase db push
-```
-
-Alternatively, paste the migrations into the Supabase dashboard SQL editor in
-filename order and run them there.
+The existing row-level security policies allow form submissions but do not
+allow visitors to read stored data. No separate Supabase account is needed.
 
 Submissions can then be reviewed in:
 
-- `Table Editor > contact_messages`
-- `Table Editor > news_submissions`
-- `Table Editor > newsletter_subscribers`
-- `Storage > news-submissions` for private attachments
+- `More > Cloud > Database > contact_messages`
+- `More > Cloud > Database > news_submissions`
+- `More > Cloud > Database > newsletter_subscribers`
+- `More > Cloud > Storage > news-submissions` for private attachments
 
 ## 2. Configure Resend
 
@@ -38,20 +35,19 @@ verified, then create an API key.
 In Vercel, open the project and go to `Settings > Environment Variables`. Add
 these to Production, Preview, and Development as appropriate:
 
-| Variable                    | Value                                                                                |
-| --------------------------- | ------------------------------------------------------------------------------------ |
-| `SUPABASE_URL`              | The project's Supabase URL                                                           |
-| `SUPABASE_SERVICE_ROLE_KEY` | The project's secret service-role key                                                |
-| `RESEND_API_KEY`            | The API key created in Resend                                                        |
-| `FORM_NOTIFICATION_TO`      | The inbox that should receive form alerts; multiple addresses can be comma-separated |
-| `FORM_NOTIFICATION_FROM`    | For example, `International Security Hub <forms@internationalsecurityhub.com>`       |
+| Variable                 | Value                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| `RESEND_API_KEY`         | The API key created in Resend                                                        |
+| `FORM_NOTIFICATION_TO`   | The inbox that should receive form alerts; multiple addresses can be comma-separated |
+| `FORM_NOTIFICATION_FROM` | For example, `International Security Hub <forms@internationalsecurityhub.com>`       |
 
-Never prefix the service-role or Resend variables with `VITE_`; that would
-expose them to browser code. After adding or changing variables, redeploy the
-latest Vercel deployment.
+Never prefix the Resend variables with `VITE_`; that would expose the API key
+to browser code. After adding or changing variables, redeploy the latest Vercel
+deployment.
 
-If Resend is not configured, valid submissions are still stored in Supabase and
-the server logs a warning that the notification was skipped.
+The Lovable Cloud URL and publishable key are already configured in the project.
+If Resend is not configured, valid submissions are still stored and the server
+logs a warning that the notification was skipped.
 
 ## 4. Test after deployment
 
