@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
-import logo from "@/assets/ish-heart.svg.asset.json";
+import logo from "@/assets/ish-heart.svg";
 import { navHref, navItems } from "@/data/ish";
 import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";
 
@@ -52,7 +52,7 @@ export function SiteHeader() {
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-5 py-4 md:px-10">
           <a href="/" className="flex items-center gap-4">
             <img
-              src={logo.url}
+              src={logo}
               alt="International Security Hub logo: red heart emblem"
               width={989}
               height={1245}
