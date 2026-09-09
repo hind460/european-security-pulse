@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Download } from "lucide-react";
 
-import logo from "@/assets/ish-mark-2026.svg.asset.json";
-import originalPdf from "@/assets/ISH-Editorial-Standards.pdf.asset.json";
-import page1 from "@/assets/ISH-Editorial-Standards-page-1.jpg.asset.json";
-import page2 from "@/assets/ISH-Editorial-Standards-page-2.jpg.asset.json";
-import page3 from "@/assets/ISH-Editorial-Standards-page-3.jpg.asset.json";
-import page4 from "@/assets/ISH-Editorial-Standards-page-4.jpg.asset.json";
+import logo from "@/assets/ish-mark-2026.svg";
+import originalPdf from "@/assets/ISH-Editorial-Standards.pdf?url";
+import page1 from "@/assets/ISH-Editorial-Standards-page-1.jpg";
+import page2 from "@/assets/ISH-Editorial-Standards-page-2.jpg";
+import page3 from "@/assets/ISH-Editorial-Standards-page-3.jpg";
+import page4 from "@/assets/ISH-Editorial-Standards-page-4.jpg";
 
 const TITLE = "Editorial Standards — International Security Hub";
 const DESCRIPTION =
