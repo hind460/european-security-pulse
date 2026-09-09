@@ -21,7 +21,7 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-  { label: "Privacy", href: "#about" },
+  { label: "Privacy", href: "/Privacy Policy", external: true },
 ];
 
 
