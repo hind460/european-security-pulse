@@ -1,5 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
-import logo from "@/assets/ish-mark-2026.svg.asset.json";
+import logo from "@/assets/ish-mark-2026.svg";
 import { navHref } from "@/data/ish";
 import { ContactDialog } from "./ContactDialog";
 
@@ -32,7 +32,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="International Security Hub logo: red heart emblem"
               width={989}
               height={1245}
