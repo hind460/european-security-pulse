@@ -31,7 +31,6 @@ export function Newsletter() {
     setDone(true);
   }
 
-
   return (
     <section
       id="newsletter"
@@ -51,8 +50,8 @@ export function Newsletter() {
             The European Security Brief
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-mist">
-            Essential cybersecurity policy, innovation and leadership
-            intelligence—delivered every month.
+            Essential cybersecurity policy, innovation and leadership intelligence—delivered every
+            month.
           </p>
         </div>
 
@@ -64,9 +63,7 @@ export function Newsletter() {
             >
               <Check className="mt-0.5 size-5 shrink-0 text-signal" aria-hidden="true" />
               <p className="text-sm text-mist">
-                <span className="block font-semibold text-ink-foreground">
-                  You're subscribed.
-                </span>
+                <span className="block font-semibold text-ink-foreground">You're subscribed.</span>
                 We'll send the next European Security Brief to {email}.
               </p>
             </div>
@@ -92,9 +89,10 @@ export function Newsletter() {
                 />
                 <button
                   type="submit"
-                  className="min-h-11 shrink-0 bg-signal px-6 text-sm font-bold tracking-[0.08em] text-signal-foreground uppercase transition-opacity hover:opacity-90"
+                  disabled={submitting}
+                  className="min-h-11 shrink-0 bg-signal px-6 text-sm font-bold tracking-[0.08em] text-signal-foreground uppercase transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Subscribe
+                  {submitting ? "Subscribing…" : "Subscribe"}
                 </button>
               </div>
               {error && (
@@ -103,8 +101,8 @@ export function Newsletter() {
                 </p>
               )}
               <p id="newsletter-privacy" className="text-xs leading-relaxed text-mist">
-                We use your address only to send the Brief. No third-party sharing,
-                unsubscribe at any time.
+                We use your address only to send the Brief. No third-party sharing, unsubscribe at
+                any time.
               </p>
             </form>
           )}

@@ -98,7 +98,7 @@ export function SiteFooter() {
           </h2>
           <div className="mt-4 flex gap-3">
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/k-el-bouhmi-53b30a107/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="International Security Hub on LinkedIn"
