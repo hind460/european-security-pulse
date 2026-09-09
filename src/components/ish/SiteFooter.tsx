@@ -2,6 +2,7 @@ import { Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/ish-mark-2026.svg";
 import { navHref } from "@/data/ish";
 import { ContactDialog } from "./ContactDialog";
+import privacyStatement from "@/assets/privacy-statement.pdf";
 
 
 const sections = [
@@ -21,7 +22,9 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-  { label: "Privacy", href: "src/assets/privacy-policy.pdf", external: true },
+<a href={privacyStatement} target="_blank" rel="noopener noreferrer">
+  Privacy Statement
+</a>
 ];
 
 
