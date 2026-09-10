@@ -123,7 +123,11 @@ function Index() {
         </section>
 
         {/* REGULATION TRACKER */}
-        <section id="regulation" aria-labelledby="tracker-title" className="border-b border-border bg-mist/50">
+        <section
+          id="regulation"
+          aria-labelledby="tracker-title"
+          className="border-b border-border bg-mist/50"
+        >
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10">
             <SectionTag>Regulation Tracker</SectionTag>
             <h2 id="tracker-title" className="mt-3 font-serif text-2xl font-bold md:text-3xl">
@@ -174,8 +178,7 @@ function Index() {
                 </h2>
               </div>
               <p className="max-w-md text-sm text-muted-foreground">
-                Every item links to the original publisher. ISH curates; it does not
-                republish.
+                Every item links to the original publisher. ISH curates; it does not republish.
               </p>
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -187,7 +190,11 @@ function Index() {
         </section>
 
         {/* INNOVATION */}
-        <section id="innovation" aria-labelledby="innovation-title" className="border-b border-border">
+        <section
+          id="innovation"
+          aria-labelledby="innovation-title"
+          className="border-b border-border"
+        >
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10">
             <SectionTag>Innovation in Europe</SectionTag>
             <h2 id="innovation-title" className="mt-3 font-serif text-2xl font-bold md:text-3xl">
@@ -205,9 +212,7 @@ function Index() {
                   className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="p-6">
-                  <h3 className="font-serif text-lg font-bold">
-                    European cybersecurity start-ups
-                  </h3>
+                  <h3 className="font-serif text-lg font-bold">European cybersecurity start-ups</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A mapped ecosystem of 728 companies across the continent.
                   </p>
@@ -217,7 +222,8 @@ function Index() {
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-signal uppercase"
                   >
-                    Read at Wavestone <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
+                    Read at Wavestone{" "}
+                    <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -260,9 +266,7 @@ function Index() {
                   className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="p-6">
-                  <h3 className="font-serif text-lg font-bold">
-                    Post-quantum cryptography
-                  </h3>
+                  <h3 className="font-serif text-lg font-bold">Post-quantum cryptography</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Europe accelerates its transition to quantum-safe cryptography.
                   </p>
@@ -287,8 +291,8 @@ function Index() {
                     Sovereign European technology
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Certification, managed security services and home-grown capability
-                    are moving to the centre of the European debate.
+                    Certification, managed security services and home-grown capability are moving to
+                    the centre of the European debate.
                   </p>
                 </div>
                 <a
@@ -305,7 +309,11 @@ function Index() {
         </section>
 
         {/* EXPERT PERSPECTIVES */}
-        <section id="experts" aria-labelledby="experts-title" className="bg-ink text-ink-foreground">
+        <section
+          id="experts"
+          aria-labelledby="experts-title"
+          className="bg-ink text-ink-foreground"
+        >
           <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-10">
             <SectionTag>Expert Perspectives</SectionTag>
             <h2 id="experts-title" className="mt-3 font-serif text-2xl font-bold md:text-3xl">
@@ -361,7 +369,15 @@ function Index() {
                     {e.country && (
                       <span
                         className="inline-flex h-3 w-5 overflow-hidden rounded-[2px] border border-border"
-                        aria-label={e.country === "NL" ? "Netherlands" : e.country === "DE" ? "Germany" : e.country === "EE" ? "Estonia" : e.country}
+                        aria-label={
+                          e.country === "NL"
+                            ? "Netherlands"
+                            : e.country === "DE"
+                              ? "Germany"
+                              : e.country === "EE"
+                                ? "Estonia"
+                                : e.country
+                        }
                         role="img"
                       >
                         <span className="flex flex-col w-full">
@@ -406,7 +422,11 @@ function Index() {
         </section>
 
         {/* ORGANISATIONS */}
-        <section id="organisations" aria-labelledby="orgs-title" className="border-b border-border bg-mist/50">
+        <section
+          id="organisations"
+          aria-labelledby="orgs-title"
+          className="border-b border-border bg-mist/50"
+        >
           <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10">
             <SectionTag>Organisations to Watch</SectionTag>
             <h2 id="orgs-title" className="mt-3 font-serif text-2xl font-bold md:text-3xl">
@@ -422,8 +442,8 @@ function Index() {
               ))}
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Directory preview for orientation only. Listing does not imply endorsement
-              or partnership.
+              Directory preview for orientation only. Listing does not imply endorsement or
+              partnership.
             </p>
           </div>
         </section>
@@ -439,15 +459,13 @@ function Index() {
             </div>
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                 International Security Hub is an independent knowledge hub covering
-                cybersecurity regulation, innovation, experts, events and organisations
-                across Europe and beyond.
+                International Security Hub is an independent knowledge hub covering cybersecurity
+                regulation, innovation, experts, events and organisations across Europe and beyond.
               </p>
               <p>
-                We curate and contextualise reporting from institutions, agencies,
-                researchers and news organisations, always attributing and linking to
-                the original publisher. Curated coverage is never presented as original
-                ISH reporting.
+                We curate and contextualise reporting from institutions, agencies, researchers and
+                news organisations, always attributing and linking to the original publisher.
+                Curated coverage is never presented as original ISH reporting.
               </p>
             </div>
           </div>

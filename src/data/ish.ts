@@ -9,8 +9,7 @@ export type Story = {
 
 export const leadStory: Story = {
   category: "EU Regulation",
-  headline:
-    "EU begins enforcing the AI Act's new rules and transparency requirements",
+  headline: "EU begins enforcing the AI Act's new rules and transparency requirements",
   summary:
     "Europe enters a new phase of AI governance as the Commission and national authorities begin applying landmark requirements to advanced systems.",
   publisher: "European Commission",
@@ -20,22 +19,19 @@ export const leadStory: Story = {
 export const latestDevelopments: Story[] = [
   {
     category: "Regulation",
-    headline:
-      "Commission publishes new guidance for Cyber Resilience Act implementation",
+    headline: "Commission publishes new guidance for Cyber Resilience Act implementation",
     publisher: "European Commission",
     url: "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
   },
   {
     category: "Resilience",
-    headline:
-      "Cyber Europe 2026 tests the EU's collective response to infrastructure disruption",
+    headline: "Cyber Europe 2026 tests the EU's collective response to infrastructure disruption",
     publisher: "ENISA",
     url: "https://www.enisa.europa.eu/news/cyber-europe-2026-all-eyes-on-the-eus-collective-response-and-resilience",
   },
   {
     category: "Threat Landscape",
-    headline:
-      "European markets watchdog warns that AI is accelerating systemic cyber risk",
+    headline: "European markets watchdog warns that AI is accelerating systemic cyber risk",
     publisher: "Reuters",
     url: "https://www.reuters.com/world/europes-markets-watchdog-warns-cyber-threats-are-growing-ai-speeds-up-risks-2026-04-24/",
   },
@@ -44,8 +40,7 @@ export const latestDevelopments: Story[] = [
 export const curatedStories: Story[] = [
   {
     category: "Regulation",
-    headline:
-      "Commission publishes new guidance for Cyber Resilience Act implementation",
+    headline: "Commission publishes new guidance for Cyber Resilience Act implementation",
     summary:
       "New implementation guidance is published to support organisations preparing for the Cyber Resilience Act.",
     publisher: "European Commission",
@@ -53,8 +48,7 @@ export const curatedStories: Story[] = [
   },
   {
     category: "Regulation",
-    headline:
-      "Europe consults industry on certification of managed security services",
+    headline: "Europe consults industry on certification of managed security services",
     summary:
       "ENISA invites industry views on a certification approach for managed security services across the Union.",
     publisher: "ENISA",
@@ -87,8 +81,7 @@ export const curatedStories: Story[] = [
   {
     category: "Experts",
     contentType: "Podcast",
-    headline:
-      "ENISA experts examine the machine-speed threats emerging from frontier AI",
+    headline: "ENISA experts examine the machine-speed threats emerging from frontier AI",
     summary:
       "ENISA's first podcast episode explores the security implications of frontier artificial intelligence.",
     publisher: "ENISA",
@@ -105,8 +98,7 @@ export const curatedStories: Story[] = [
   },
   {
     category: "Resilience",
-    headline:
-      "Cyber Europe 2026 tests the EU's collective response to infrastructure disruption",
+    headline: "Cyber Europe 2026 tests the EU's collective response to infrastructure disruption",
     summary:
       "The pan-European exercise puts the Union's collective response and resilience under scrutiny.",
     publisher: "ENISA",
@@ -114,8 +106,7 @@ export const curatedStories: Story[] = [
   },
   {
     category: "Threat Landscape",
-    headline:
-      "European markets watchdog warns that AI is accelerating systemic cyber risk",
+    headline: "European markets watchdog warns that AI is accelerating systemic cyber risk",
     summary:
       "Europe's markets watchdog says cyber threats are growing as artificial intelligence speeds up risk.",
     publisher: "Reuters",

@@ -96,8 +96,8 @@ export function ContactDialog({
                 Thank you for getting in touch
               </DialogTitle>
               <DialogDescription className="pt-2 text-sm leading-relaxed">
-                Your message has been received. The ISH team will review it and
-                respond to you shortly.
+                Your message has been received. The ISH team will review it and respond to you
+                shortly.
               </DialogDescription>
             </DialogHeader>
           </div>
@@ -120,7 +120,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="Your full name"
                 />
-                {errors['name'] && <p className={errClass}>{errors['name']}</p>}
+                {errors["name"] && <p className={errClass}>{errors["name"]}</p>}
               </div>
 
               <div>
@@ -133,7 +133,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="you@example.com"
                 />
-                {errors['email'] && <p className={errClass}>{errors['email']}</p>}
+                {errors["email"] && <p className={errClass}>{errors["email"]}</p>}
               </div>
 
               <div>
@@ -146,7 +146,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="How can we help?"
                 />
-                {errors['message'] && <p className={errClass}>{errors['message']}</p>}
+                {errors["message"] && <p className={errClass}>{errors["message"]}</p>}
               </div>
 
               <div>
@@ -162,12 +162,11 @@ export function ContactDialog({
                     htmlFor="contact-consent"
                     className="cursor-pointer text-sm font-normal leading-snug text-muted-foreground"
                   >
-                    I agree that ISH may use my name and email address to reply
-                    to this message. ISH will not share my data with third
-                    parties.
+                    I agree that ISH may use my name and email address to reply to this message. ISH
+                    will not share my data with third parties.
                   </Label>
                 </div>
-                {errors['consent'] && <p className={errClass}>{errors['consent']}</p>}
+                {errors["consent"] && <p className={errClass}>{errors["consent"]}</p>}
               </div>
 
               <button

@@ -3,19 +3,10 @@ import logo from "@/assets/ish-mark-2026.svg";
 import { navHref } from "@/data/ish";
 import { ContactDialog } from "./ContactDialog";
 
-
 const sections = [
   {
     title: "Sections",
-    links: [
-      "Latest",
-      "Regulation",
-      "Innovation",
-      "Events",
-      "Experts",
-      "Organisations",
-      "About",
-    ],
+    links: ["Latest", "Regulation", "Innovation", "Events", "Experts", "Organisations", "About"],
   },
 ];
 
@@ -23,7 +14,6 @@ const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
   { label: "Privacy", href: "/privacy" },
 ];
-
 
 export function SiteFooter() {
   return (
@@ -51,9 +41,7 @@ export function SiteFooter() {
 
         {sections.map((s) => (
           <nav key={s.title} aria-label={s.title}>
-            <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">
-              {s.title}
-            </h2>
+            <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">{s.title}</h2>
             <ul className="mt-4 space-y-2 text-sm">
               {s.links.map((l) => (
                 <li key={l}>
@@ -67,9 +55,7 @@ export function SiteFooter() {
         ))}
 
         <nav aria-label="Policies">
-          <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">
-            Standards
-          </h2>
+          <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">Standards</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {policies.map((l) => (
               <li key={l.label}>
@@ -89,13 +75,10 @@ export function SiteFooter() {
               </ContactDialog>
             </li>
           </ul>
-
         </nav>
 
         <div>
-          <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">
-            Follow
-          </h2>
+          <h2 className="text-xs font-bold tracking-[0.14em] text-card uppercase">Follow</h2>
           <div className="mt-4 flex gap-3">
             <a
               href="https://www.linkedin.com"
@@ -119,9 +102,9 @@ export function SiteFooter() {
 
       <div className="border-t border-slate/25">
         <div className="mx-auto max-w-[1440px] px-5 py-6 text-xs text-night-foreground md:px-10">
-          International Security Hub curates and links to reporting published by
-          external organisations. External articles remain the work of their
-          publishers and are not presented as original ISH reporting.
+          International Security Hub curates and links to reporting published by external
+          organisations. External articles remain the work of their publishers and are not presented
+          as original ISH reporting.
         </div>
       </div>
     </footer>
