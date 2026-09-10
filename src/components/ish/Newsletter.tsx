@@ -1,36 +1,21 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
-  async function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const value = email.trim().toLowerCase();
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
     if (!valid) {
       setError("Please enter a valid email address.");
       return;
     }
     setError("");
-    setSubmitting(true);
-    const { error: insertError } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: value });
-    setSubmitting(false);
-
-    // 23505 = already subscribed; treat as success for the reader.
-    if (insertError && insertError.code !== "23505") {
-      setError("Something went wrong. Please try again in a moment.");
-      return;
-    }
     setDone(true);
   }
-
 
   return (
     <section

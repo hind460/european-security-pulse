@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { Check } from "lucide-react";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
 
 import {
   Dialog,
