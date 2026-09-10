@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { Check } from "lucide-react";
-import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { submitContactForm } from "@/lib/form-submissions.functions";
 
 import {
   Dialog,
@@ -39,9 +37,7 @@ export function ContactDialog({
   const [done, setDone] = useState(false);
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
-  const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const submitContact = useServerFn(submitContactForm);
 
   function reset() {
     setDone(false);
@@ -50,14 +46,14 @@ export function ContactDialog({
     formRef.current?.reset();
   }
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
       message: String(fd.get("message") ?? ""),
-      consent,
+      consent: fd.get("consent") === "on",
     });
 
     if (!parsed.success) {
@@ -71,17 +67,7 @@ export function ContactDialog({
     }
 
     setErrors({});
-    setSubmitting(true);
-    fd.set("consent", "on");
-
-    try {
-      await submitContact({ data: fd });
-      setDone(true);
-    } catch {
-      setErrors({ form: "Something went wrong. Please try again in a moment." });
-    } finally {
-      setSubmitting(false);
-    }
+    setDone(true);
   }
 
   const fieldClass = "mt-1.5";
@@ -110,8 +96,8 @@ export function ContactDialog({
                 Thank you for getting in touch
               </DialogTitle>
               <DialogDescription className="pt-2 text-sm leading-relaxed">
-                Your message has been received. The ISH team will review it and respond to you
-                shortly.
+                Your message has been received. The ISH team will review it and
+                respond to you shortly.
               </DialogDescription>
             </DialogHeader>
           </div>
@@ -125,14 +111,6 @@ export function ContactDialog({
             </DialogHeader>
 
             <form ref={formRef} onSubmit={onSubmit} noValidate className="space-y-4">
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-                className="hidden"
-                aria-hidden="true"
-              />
               <div>
                 <Label htmlFor="contact-name">Name</Label>
                 <Input
@@ -142,7 +120,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="Your full name"
                 />
-                {errors["name"] && <p className={errClass}>{errors["name"]}</p>}
+                {errors['name'] && <p className={errClass}>{errors['name']}</p>}
               </div>
 
               <div>
@@ -155,7 +133,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="you@example.com"
                 />
-                {errors["email"] && <p className={errClass}>{errors["email"]}</p>}
+                {errors['email'] && <p className={errClass}>{errors['email']}</p>}
               </div>
 
               <div>
@@ -168,7 +146,7 @@ export function ContactDialog({
                   className={fieldClass}
                   placeholder="How can we help?"
                 />
-                {errors["message"] && <p className={errClass}>{errors["message"]}</p>}
+                {errors['message'] && <p className={errClass}>{errors['message']}</p>}
               </div>
 
               <div>
@@ -184,25 +162,20 @@ export function ContactDialog({
                     htmlFor="contact-consent"
                     className="cursor-pointer text-sm font-normal leading-snug text-muted-foreground"
                   >
-                    I agree that ISH may use my name and email address to reply to this message. ISH
-                    will not share my data with third parties.
+                    I agree that ISH may use my name and email address to reply
+                    to this message. ISH will not share my data with third
+                    parties.
                   </Label>
                 </div>
-                {errors["consent"] && <p className={errClass}>{errors["consent"]}</p>}
+                {errors['consent'] && <p className={errClass}>{errors['consent']}</p>}
               </div>
 
               <button
                 type="submit"
-                disabled={submitting}
-                className="w-full bg-signal px-5 py-3 text-xs font-bold tracking-[0.12em] text-card uppercase transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full bg-signal px-5 py-3 text-xs font-bold tracking-[0.12em] text-card uppercase transition-opacity hover:opacity-90"
               >
-                {submitting ? "Sending…" : "Send message"}
+                Send message
               </button>
-              {errors["form"] && (
-                <p role="alert" className={errClass}>
-                  {errors["form"]}
-                </p>
-              )}
             </form>
           </>
         )}

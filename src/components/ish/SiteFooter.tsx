@@ -2,7 +2,6 @@ import { Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/ish-mark-2026.svg";
 import { navHref } from "@/data/ish";
 import { ContactDialog } from "./ContactDialog";
-import privacyPolicy from "@/assets/privacy-policy.pdf";
 
 
 const sections = [
@@ -22,8 +21,9 @@ const sections = [
 
 const policies = [
   { label: "Editorial standards", href: "/editorial-standards", external: true },
-  { label: "Privacy", href: privacyPolicy, external: true },
+  { label: "Privacy", href: "/privacy" },
 ];
+
 
 export function SiteFooter() {
   return (
@@ -98,7 +98,7 @@ export function SiteFooter() {
           </h2>
           <div className="mt-4 flex gap-3">
             <a
-              href="https://www.linkedin.com/in/k-el-bouhmi-53b30a107/"
+              href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="International Security Hub on LinkedIn"

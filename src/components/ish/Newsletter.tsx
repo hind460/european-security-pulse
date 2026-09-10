@@ -1,33 +1,19 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
-  async function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const value = email.trim().toLowerCase();
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
     if (!valid) {
       setError("Please enter a valid email address.");
       return;
     }
     setError("");
-    setSubmitting(true);
-    const { error: insertError } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: value });
-    setSubmitting(false);
-
-    // 23505 = already subscribed; treat as success for the reader.
-    if (insertError && insertError.code !== "23505") {
-      setError("Something went wrong. Please try again in a moment.");
-      return;
-    }
     setDone(true);
   }
 
@@ -50,8 +36,8 @@ export function Newsletter() {
             The European Security Brief
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-mist">
-            Essential cybersecurity policy, innovation and leadership intelligence—delivered every
-            month.
+            Essential cybersecurity policy, innovation and leadership
+            intelligence—delivered every month.
           </p>
         </div>
 
@@ -63,7 +49,9 @@ export function Newsletter() {
             >
               <Check className="mt-0.5 size-5 shrink-0 text-signal" aria-hidden="true" />
               <p className="text-sm text-mist">
-                <span className="block font-semibold text-ink-foreground">You're subscribed.</span>
+                <span className="block font-semibold text-ink-foreground">
+                  You're subscribed.
+                </span>
                 We'll send the next European Security Brief to {email}.
               </p>
             </div>
@@ -89,10 +77,9 @@ export function Newsletter() {
                 />
                 <button
                   type="submit"
-                  disabled={submitting}
-                  className="min-h-11 shrink-0 bg-signal px-6 text-sm font-bold tracking-[0.08em] text-signal-foreground uppercase transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="min-h-11 shrink-0 bg-signal px-6 text-sm font-bold tracking-[0.08em] text-signal-foreground uppercase transition-opacity hover:opacity-90"
                 >
-                  {submitting ? "Subscribing…" : "Subscribe"}
+                  Subscribe
                 </button>
               </div>
               {error && (
@@ -101,8 +88,8 @@ export function Newsletter() {
                 </p>
               )}
               <p id="newsletter-privacy" className="text-xs leading-relaxed text-mist">
-                We use your address only to send the Brief. No third-party sharing, unsubscribe at
-                any time.
+                We use your address only to send the Brief. No third-party sharing,
+                unsubscribe at any time.
               </p>
             </form>
           )}

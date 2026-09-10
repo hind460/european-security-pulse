@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import { Check, Paperclip } from "lucide-react";
-import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { submitNewsForm } from "@/lib/form-submissions.functions";
 import {
   Dialog,
   DialogContent,
@@ -58,9 +56,7 @@ export function SubmitNewsDialog({
   const [type, setType] = useState<string>("");
   const [fileName, setFileName] = useState("");
   const [errors, setErrors] = useState<Errors>({});
-  const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const submitNews = useServerFn(submitNewsForm);
 
   function reset() {
     setDone(false);
@@ -70,10 +66,9 @@ export function SubmitNewsDialog({
     formRef.current?.reset();
   }
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    fd.set("type", type);
     const parsed = schema.safeParse({
       type,
       otherType: String(fd.get("otherType") ?? ""),
@@ -94,21 +89,7 @@ export function SubmitNewsDialog({
     }
 
     setErrors({});
-    const candidate = fd.get("file");
-    if (candidate instanceof File && candidate.size > 10 * 1024 * 1024) {
-      setErrors({ file: "Please choose a file smaller than 10 MB." });
-      return;
-    }
-
-    setSubmitting(true);
-    try {
-      await submitNews({ data: fd });
-      setDone(true);
-    } catch {
-      setErrors({ form: "Something went wrong. Please try again in a moment." });
-    } finally {
-      setSubmitting(false);
-    }
+    setDone(true);
   }
 
   const fieldClass = "mt-1.5";
@@ -137,7 +118,8 @@ export function SubmitNewsDialog({
                 Thank you for your contribution
               </DialogTitle>
               <DialogDescription className="pt-2 text-sm leading-relaxed">
-                Your work will be reviewed and you will be contacted by the ISH team shortly.
+                Your work will be reviewed and you will be contacted by the ISH
+                team shortly.
               </DialogDescription>
             </DialogHeader>
           </div>
@@ -146,20 +128,12 @@ export function SubmitNewsDialog({
             <DialogHeader>
               <DialogTitle className="font-serif">Submit news</DialogTitle>
               <DialogDescription>
-                Share an article, research, white paper or other contribution with the ISH editorial
-                desk.
+                Share an article, research, white paper or other contribution
+                with the ISH editorial desk.
               </DialogDescription>
             </DialogHeader>
 
             <form ref={formRef} onSubmit={onSubmit} noValidate className="space-y-4">
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-                className="hidden"
-                aria-hidden="true"
-              />
               <div>
                 <Label htmlFor="submission-file">Attach file</Label>
                 <label
@@ -167,7 +141,9 @@ export function SubmitNewsDialog({
                   className={`${fieldClass} flex cursor-pointer items-center gap-2 border border-input px-3 py-2 text-sm text-muted-foreground hover:bg-accent`}
                 >
                   <Paperclip className="size-4 shrink-0" aria-hidden="true" />
-                  <span className="truncate">{fileName || "Choose a file (PDF, DOC, DOCX)"}</span>
+                  <span className="truncate">
+                    {fileName || "Choose a file (PDF, DOC, DOCX)"}
+                  </span>
                 </label>
                 <input
                   id="submission-file"
@@ -177,7 +153,6 @@ export function SubmitNewsDialog({
                   className="sr-only"
                   onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
                 />
-                {errors["file"] && <p className={errClass}>{errors["file"]}</p>}
               </div>
 
               <div>
@@ -194,7 +169,7 @@ export function SubmitNewsDialog({
                     ))}
                   </SelectContent>
                 </Select>
-                {errors["type"] && <p className={errClass}>{errors["type"]}</p>}
+                {errors['type'] && <p className={errClass}>{errors['type']}</p>}
               </div>
 
               {type === "Other" && (
@@ -208,7 +183,7 @@ export function SubmitNewsDialog({
                     className={fieldClass}
                     placeholder="Tell us what kind of contribution this is"
                   />
-                  {errors["otherType"] && <p className={errClass}>{errors["otherType"]}</p>}
+                  {errors['otherType'] && <p className={errClass}>{errors['otherType']}</p>}
                 </div>
               )}
 
@@ -221,7 +196,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Title of your contribution"
                 />
-                {errors["title"] && <p className={errClass}>{errors["title"]}</p>}
+                {errors['title'] && <p className={errClass}>{errors['title']}</p>}
               </div>
 
               <div>
@@ -234,7 +209,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="you@example.com"
                 />
-                {errors["email"] && <p className={errClass}>{errors["email"]}</p>}
+                {errors['email'] && <p className={errClass}>{errors['email']}</p>}
               </div>
 
               <div>
@@ -246,7 +221,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Full name"
                 />
-                {errors["author"] && <p className={errClass}>{errors["author"]}</p>}
+                {errors['author'] && <p className={errClass}>{errors['author']}</p>}
               </div>
 
               <div>
@@ -258,21 +233,15 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="https://www.linkedin.com/in/…"
                 />
-                {errors["linkedin"] && <p className={errClass}>{errors["linkedin"]}</p>}
+                {errors['linkedin'] && <p className={errClass}>{errors['linkedin']}</p>}
               </div>
 
               <button
                 type="submit"
-                disabled={submitting}
-                className="w-full bg-signal px-5 py-3 text-xs font-bold tracking-[0.12em] text-card uppercase transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full bg-signal px-5 py-3 text-xs font-bold tracking-[0.12em] text-card uppercase transition-opacity hover:opacity-90"
               >
-                {submitting ? "Submitting…" : "Submit contribution"}
+                Submit contribution
               </button>
-              {errors["form"] && (
-                <p role="alert" className={errClass}>
-                  {errors["form"]}
-                </p>
-              )}
             </form>
           </>
         )}

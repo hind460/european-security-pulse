@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EditorialStandardsRouteImport } from './routes/editorial-standards'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const EditorialStandardsRoute = EditorialStandardsRouteImport.update({
   path: '/editorial-standards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/editorial-standards'
+  fullPaths: '/' | '/editorial-standards' | '/privacy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/editorial-standards'
-  id: '__root__' | '/' | '/editorial-standards'
+  to: '/' | '/editorial-standards' | '/privacy'
+  id: '__root__' | '/' | '/editorial-standards' | '/privacy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EditorialStandardsRoute: typeof EditorialStandardsRoute
+  PrivacyRoute: typeof PrivacyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EditorialStandardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EditorialStandardsRoute: EditorialStandardsRoute,
+  PrivacyRoute: PrivacyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
