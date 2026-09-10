@@ -1,3 +1,3 @@
-- [ ] Add the existing Privacy Statement at its current route using the Editorial Standards page layout.
-- [ ] Point the footer Privacy link to that page.
-- [ ] Verify desktop and mobile previews without changing other areas.
+- [x] Add the existing Privacy Statement at its current route using the Editorial Standards page layout.
+- [x] Point the footer Privacy link to that page.
+- [x] Verify desktop and mobile previews without changing other areas.
