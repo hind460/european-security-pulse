@@ -30,10 +30,7 @@ export function SiteHeader() {
       <div className="bg-night text-night-foreground">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-y-1 px-5 py-2 text-[11px] tracking-[0.11em] uppercase md:px-10">
           <p className="flex items-center gap-2 text-card">
-            <span
-              className="inline-block size-1.5 rounded-full bg-signal"
-              aria-hidden="true"
-            />
+            <span className="inline-block size-1.5 rounded-full bg-signal" aria-hidden="true" />
             Global Desk Live
           </p>
           <p className="hidden sm:block">{today}</p>
@@ -71,13 +68,8 @@ export function SiteHeader() {
             </span>
           </a>
 
-          <a
-            href="#newsletter"
-            className="hidden max-w-xs border-l border-border pl-6 lg:block"
-          >
-            <span className="block font-serif text-sm font-bold">
-              The Global Security Brief
-            </span>
+          <a href="#newsletter" className="hidden max-w-xs border-l border-border pl-6 lg:block">
+            <span className="block font-serif text-sm font-bold">The Global Security Brief</span>
             <span className="mt-1 block text-xs text-muted-foreground">
               Policy, innovation and leadership intelligence, every month.
             </span>
