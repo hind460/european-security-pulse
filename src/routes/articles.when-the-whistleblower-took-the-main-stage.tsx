@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 
 import logo from "@/assets/ish-mark-2026.svg";
 import cybersecHero from "@/assets/cybersec-netherlands-2026-hero.webp";
