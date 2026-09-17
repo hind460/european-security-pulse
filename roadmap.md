@@ -3,4 +3,4 @@
 - [x] Verify desktop and mobile previews without changing other areas.
 - [x] Add the new Spotlight feature above the existing homepage lead without removing existing content.
 - [x] Create the complete Cybersec Netherlands 2026 article page with supplied images and captions.
-- [ ] Add article-specific SEO and social metadata, then verify desktop and mobile behavior.
+- [x] Add article-specific SEO and social metadata, then verify desktop and mobile behavior.
