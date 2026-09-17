@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
 
 import { SiteHeader } from "@/components/ish/SiteHeader";
 import { SiteFooter } from "@/components/ish/SiteFooter";
@@ -18,6 +18,7 @@ import heroImage from "@/assets/hero-lead.jpg";
 import europeMap from "@/assets/europe-network.jpg";
 import quantumImage from "@/assets/innovation-quantum.jpg";
 import startupsImage from "@/assets/innovation-startups.jpg";
+import spotlightImage from "@/assets/cybersec-netherlands-2026-hero.webp.asset.json";
 
 const TITLE = "International Security Hub — European Cybersecurity Press";
 const DESCRIPTION =
@@ -43,12 +44,55 @@ function Index() {
       <SiteHeader />
 
       <main>
+        {/* SPOTLIGHT */}
+        <section aria-labelledby="spotlight-headline" className="border-b border-border bg-card">
+          <article className="group relative mx-auto grid max-w-[1440px] lg:grid-cols-[1fr_1.35fr]">
+            <div className="flex flex-col justify-center px-5 py-10 md:px-10 lg:py-14">
+              <SectionTag>Spotlight</SectionTag>
+              <h1
+                id="spotlight-headline"
+                className="mt-4 font-serif text-3xl leading-[1.08] font-bold sm:text-4xl lg:text-5xl"
+              >
+                When the Whistleblower Took the Main Stage
+              </h1>
+              <p className="mt-3 font-serif text-lg font-semibold text-signal sm:text-xl">
+                Inside Cybersec Netherlands 2026
+              </p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Cybersec Netherlands 2026 turned digital sovereignty from a policy abstraction
+                into a question of ownership, operational judgment and collective responsibility.
+                Its most powerful example came from a whistleblower willing to make an
+                uncomfortable warning public.
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-signal">
+                Read the full article
+                <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </span>
+            </div>
+            <figure className="relative min-h-64 overflow-hidden bg-night sm:min-h-96 lg:min-h-[500px]">
+              <img
+                src={spotlightImage.url}
+                alt="A speaker addressing the audience on the Cybersec Netherlands 2026 main stage"
+                width={1600}
+                height={900}
+                fetchPriority="high"
+                className="absolute inset-0 size-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+              />
+            </figure>
+            <Link
+              to="/articles/when-the-whistleblower-took-the-main-stage"
+              aria-label="Read When the Whistleblower Took the Main Stage — Inside Cybersec Netherlands 2026"
+              className="absolute inset-0 z-10"
+            />
+          </article>
+        </section>
+
         {/* HERO */}
         <section id="latest" aria-labelledby="lead-headline" className="border-b border-border">
           <div className="mx-auto grid max-w-[1440px] gap-10 px-5 py-10 md:px-10 lg:grid-cols-[1.65fr_1fr] lg:py-14">
             <article className="group">
               <SectionTag>EU Regulation</SectionTag>
-              <h1
+              <h2
                 id="lead-headline"
                 className="mt-4 font-serif text-3xl leading-[1.08] font-bold sm:text-4xl lg:text-[3.4rem]"
               >
@@ -60,7 +104,7 @@ function Index() {
                 >
                   {leadStory.headline}
                 </a>
-              </h1>
+              </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
                 {leadStory.summary}
               </p>
