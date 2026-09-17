@@ -92,6 +92,10 @@ function CybersecArticlePage() {
             <h1 className="mx-auto mt-4 max-w-4xl font-serif text-4xl leading-[1.08] font-bold sm:text-5xl lg:text-6xl">
               When the Whistleblower Took the Main Stage
             </h1>
+            <p className="meta mt-3 inline-flex items-center justify-center gap-2">
+              <Clock className="size-4 shrink-0" aria-hidden="true" />
+              {READING_TIME}
+            </p>
             <p className="mt-4 font-serif text-xl font-semibold text-signal sm:text-2xl">
               Inside Cybersec Netherlands 2026
             </p>
