@@ -158,6 +158,11 @@ function Index() {
                         {s.headline}
                       </a>
                     </h3>
+                    {s.summary && (
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {s.summary}
+                      </p>
+                    )}
                     <p className="meta mt-2">{s.publisher}</p>
                   </li>
                 ))}
