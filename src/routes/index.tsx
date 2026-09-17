@@ -18,7 +18,7 @@ import heroImage from "@/assets/hero-lead.jpg";
 import europeMap from "@/assets/europe-network.jpg";
 import quantumImage from "@/assets/innovation-quantum.jpg";
 import startupsImage from "@/assets/innovation-startups.jpg";
-import spotlightImage from "@/assets/cybersec-netherlands-2026-hero.webp.asset.json";
+import spotlightImage from "@/assets/cybersec-netherlands-2026-stage.jpg.asset.json";
 
 const TITLE = "International Security Hub — European Cybersecurity Press";
 const DESCRIPTION =
