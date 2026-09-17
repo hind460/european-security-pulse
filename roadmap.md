@@ -5,4 +5,4 @@
 - [x] Create the complete Cybersec Netherlands 2026 article page with supplied images and captions.
 - [x] Add article-specific SEO and social metadata, then verify desktop and mobile behavior.
 7. - [x] Replace all Cybersec CDN image references with bundled asset imports on the homepage and article page.
-8. - [ ] Verify the production build and publish the website.
+8. - [x] Verify the production build and publish the website.
