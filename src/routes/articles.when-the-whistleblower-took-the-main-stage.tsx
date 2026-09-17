@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 
 import logo from "@/assets/ish-mark-2026.svg";
 import cybersecHero from "@/assets/cybersec-netherlands-2026-hero.webp";
@@ -12,6 +12,7 @@ const TITLE = "When the Whistleblower Took the Main Stage | International Securi
 const DESCRIPTION =
   "Cybersec Netherlands 2026 turned digital sovereignty into a question of ownership, operational judgment and collective responsibility.";
 const SOCIAL_IMAGE = `https://id-preview--a1245732-e1d4-496a-a76f-4ce85900c245.lovable.app${cybersecSocial}`;
+const READING_TIME = "11 min read";
 
 export const Route = createFileRoute(
   "/articles/when-the-whistleblower-took-the-main-stage",
@@ -91,6 +92,10 @@ function CybersecArticlePage() {
             <h1 className="mx-auto mt-4 max-w-4xl font-serif text-4xl leading-[1.08] font-bold sm:text-5xl lg:text-6xl">
               When the Whistleblower Took the Main Stage
             </h1>
+            <p className="meta mt-3 inline-flex items-center justify-center gap-2">
+              <Clock className="size-4 shrink-0" aria-hidden="true" />
+              {READING_TIME}
+            </p>
             <p className="mt-4 font-serif text-xl font-semibold text-signal sm:text-2xl">
               Inside Cybersec Netherlands 2026
             </p>
