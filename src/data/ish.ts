@@ -19,6 +19,14 @@ export const leadStory: Story = {
 
 export const latestDevelopments: Story[] = [
   {
+    category: "Cybercrime",
+    headline: "Revolut data breach and Italian government email hijack",
+    summary:
+      "The hackers behind the recent Revolut data breach used infostealer-compromised Italian government accounts for five months.",
+    publisher: "Cyber Insider",
+    url: "https://cyberinsider.com/revolut-hackers-used-infostealer-to-hijack-italian-government-emails/",
+  },
+  {
     category: "Regulation",
     headline:
       "Commission publishes new guidance for Cyber Resilience Act implementation",
