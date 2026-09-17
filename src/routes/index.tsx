@@ -18,7 +18,7 @@ import heroImage from "@/assets/hero-lead.jpg";
 import europeMap from "@/assets/europe-network.jpg";
 import quantumImage from "@/assets/innovation-quantum.jpg";
 import startupsImage from "@/assets/innovation-startups.jpg";
-import spotlightImage from "@/assets/cybersec-netherlands-2026-stage.webp.asset.json";
+import cybersecStage from "@/assets/cybersec-netherlands-2026-stage.webp";
 
 const TITLE = "International Security Hub — European Cybersecurity Press";
 const DESCRIPTION =
@@ -71,7 +71,7 @@ function Index() {
             </div>
             <figure className="relative min-h-64 overflow-hidden bg-night sm:min-h-96 lg:min-h-[500px]">
               <img
-                src={spotlightImage.url}
+                src={cybersecStage}
                 alt="Two speakers on the Cybersec Netherlands 2026 main stage"
                 width={1536}
                 height={1024}

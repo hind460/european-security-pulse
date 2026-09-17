@@ -2,16 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import logo from "@/assets/ish-mark-2026.svg";
-import heroAsset from "@/assets/cybersec-netherlands-2026-hero.webp.asset.json";
-import socialAsset from "@/assets/cybersec-netherlands-2026-social.webp.asset.json";
-import vanOordtAsset from "@/assets/cybersec-van-oordt.png.asset.json";
-import groothuisAsset from "@/assets/cybersec-bart-groothuis.png.asset.json";
-import resilienceAsset from "@/assets/cybersec-groeneveld-gaiser.png.asset.json";
+import cybersecHero from "@/assets/cybersec-netherlands-2026-hero.webp";
+import cybersecSocial from "@/assets/cybersec-netherlands-2026-social.webp";
+import cybersecVanOordt from "@/assets/cybersec-van-oordt.png";
+import cybersecBartGroothuis from "@/assets/cybersec-bart-groothuis.png";
+import cybersecGroeneveldGaiser from "@/assets/cybersec-groeneveld-gaiser.png";
 
 const TITLE = "When the Whistleblower Took the Main Stage | International Security Hub";
 const DESCRIPTION =
   "Cybersec Netherlands 2026 turned digital sovereignty into a question of ownership, operational judgment and collective responsibility.";
-const SOCIAL_IMAGE = `https://id-preview--a1245732-e1d4-496a-a76f-4ce85900c245.lovable.app${socialAsset.url}`;
+const SOCIAL_IMAGE = `https://id-preview--a1245732-e1d4-496a-a76f-4ce85900c245.lovable.app${cybersecSocial}`;
 
 export const Route = createFileRoute(
   "/articles/when-the-whistleblower-took-the-main-stage",
@@ -105,7 +105,7 @@ function CybersecArticlePage() {
 
           <figure className="mx-auto max-w-[1440px] px-0 sm:px-6">
             <img
-              src={heroAsset.url}
+              src={cybersecHero}
               alt="A speaker addressing the audience on the Cybersec Netherlands 2026 main stage"
               width={1600}
               height={900}
@@ -140,7 +140,7 @@ function CybersecArticlePage() {
             </p>
 
             <ArticleFigure
-              src={vanOordtAsset.url}
+              src={cybersecVanOordt}
               alt="Jeroen van Nijnatten and Pieter van Oordt on the Cybersec Netherlands stage"
               width={800}
               height={534}
@@ -206,7 +206,7 @@ function CybersecArticlePage() {
             </p>
 
             <ArticleFigure
-              src={groothuisAsset.url}
+              src={cybersecBartGroothuis}
               alt="Bart Groothuis speaking about European digital sovereignty at Cybersec Netherlands 2026"
               width={1708}
               height={921}
@@ -293,7 +293,7 @@ function CybersecArticlePage() {
             </p>
 
             <ArticleFigure
-              src={resilienceAsset.url}
+              src={cybersecGroeneveldGaiser}
               alt="Mietta Groeneveld and Jeroen Gaiser discussing cyber resilience on stage"
               width={1448}
               height={1086}
