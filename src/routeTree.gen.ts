@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EditorialStandardsRouteImport } from './routes/editorial-standards'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ArticlesWhenTheWhistleblowerTookTheMainStageRouteImport } from './routes/articles.when-the-whistleblower-took-the-main-stage'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,58 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticlesWhenTheWhistleblowerTookTheMainStageRoute =
+  ArticlesWhenTheWhistleblowerTookTheMainStageRouteImport.update({
+    id: '/articles/when-the-whistleblower-took-the-main-stage',
+    path: '/articles/when-the-whistleblower-took-the-main-stage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
   '/privacy': typeof PrivacyRoute
+  '/articles/when-the-whistleblower-took-the-main-stage': typeof ArticlesWhenTheWhistleblowerTookTheMainStageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
   '/privacy': typeof PrivacyRoute
+  '/articles/when-the-whistleblower-took-the-main-stage': typeof ArticlesWhenTheWhistleblowerTookTheMainStageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/editorial-standards': typeof EditorialStandardsRoute
   '/privacy': typeof PrivacyRoute
+  '/articles/when-the-whistleblower-took-the-main-stage': typeof ArticlesWhenTheWhistleblowerTookTheMainStageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/editorial-standards' | '/privacy'
+  fullPaths:
+    | '/'
+    | '/editorial-standards'
+    | '/privacy'
+    | '/articles/when-the-whistleblower-took-the-main-stage'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/editorial-standards' | '/privacy'
-  id: '__root__' | '/' | '/editorial-standards' | '/privacy'
+  to:
+    | '/'
+    | '/editorial-standards'
+    | '/privacy'
+    | '/articles/when-the-whistleblower-took-the-main-stage'
+  id:
+    | '__root__'
+    | '/'
+    | '/editorial-standards'
+    | '/privacy'
+    | '/articles/when-the-whistleblower-took-the-main-stage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EditorialStandardsRoute: typeof EditorialStandardsRoute
   PrivacyRoute: typeof PrivacyRoute
+  ArticlesWhenTheWhistleblowerTookTheMainStageRoute: typeof ArticlesWhenTheWhistleblowerTookTheMainStageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +106,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/articles/when-the-whistleblower-took-the-main-stage': {
+      id: '/articles/when-the-whistleblower-took-the-main-stage'
+      path: '/articles/when-the-whistleblower-took-the-main-stage'
+      fullPath: '/articles/when-the-whistleblower-took-the-main-stage'
+      preLoaderRoute: typeof ArticlesWhenTheWhistleblowerTookTheMainStageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +120,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EditorialStandardsRoute: EditorialStandardsRoute,
   PrivacyRoute: PrivacyRoute,
+  ArticlesWhenTheWhistleblowerTookTheMainStageRoute:
+    ArticlesWhenTheWhistleblowerTookTheMainStageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
