@@ -12,6 +12,7 @@ const TITLE = "When the Whistleblower Took the Main Stage | International Securi
 const DESCRIPTION =
   "Cybersec Netherlands 2026 turned digital sovereignty into a question of ownership, operational judgment and collective responsibility.";
 const SOCIAL_IMAGE = `https://id-preview--a1245732-e1d4-496a-a76f-4ce85900c245.lovable.app${cybersecSocial}`;
+const READING_TIME = "11 min read";
 
 export const Route = createFileRoute(
   "/articles/when-the-whistleblower-took-the-main-stage",
