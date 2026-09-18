@@ -36,9 +36,7 @@ export function StoryCard({ story }: { story: Story }) {
       </h3>
 
       {story.summary && (
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          {story.summary}
-        </p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{story.summary}</p>
       )}
 
       <div className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-4">

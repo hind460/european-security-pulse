@@ -9,8 +9,7 @@ import page3 from "@/assets/ISH-Editorial-Standards-page-3.jpg";
 import page4 from "@/assets/ISH-Editorial-Standards-page-4.jpg";
 
 const TITLE = "Editorial Standards — International Security Hub";
-const DESCRIPTION =
-  "Read the editorial standards of International Security Hub.";
+const DESCRIPTION = "Read the editorial standards of International Security Hub.";
 const pages = [page1, page2, page3, page4];
 
 export const Route = createFileRoute("/editorial-standards")({
@@ -37,13 +36,7 @@ function EditorialStandardsPage() {
             aria-label="Return to the International Security Hub front page"
             className="inline-flex min-w-0 items-center gap-3"
           >
-            <img
-              src={logo}
-              alt=""
-              width={989}
-              height={1245}
-              className="h-10 w-auto shrink-0"
-            />
+            <img src={logo} alt="" width={989} height={1245} className="h-10 w-auto shrink-0" />
             <span className="hidden font-serif text-base font-bold sm:block">
               International Security Hub
             </span>

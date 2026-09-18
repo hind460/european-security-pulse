@@ -118,8 +118,7 @@ export function SubmitNewsDialog({
                 Thank you for your contribution
               </DialogTitle>
               <DialogDescription className="pt-2 text-sm leading-relaxed">
-                Your work will be reviewed and you will be contacted by the ISH
-                team shortly.
+                Your work will be reviewed and you will be contacted by the ISH team shortly.
               </DialogDescription>
             </DialogHeader>
           </div>
@@ -128,8 +127,8 @@ export function SubmitNewsDialog({
             <DialogHeader>
               <DialogTitle className="font-serif">Submit news</DialogTitle>
               <DialogDescription>
-                Share an article, research, white paper or other contribution
-                with the ISH editorial desk.
+                Share an article, research, white paper or other contribution with the ISH editorial
+                desk.
               </DialogDescription>
             </DialogHeader>
 
@@ -141,9 +140,7 @@ export function SubmitNewsDialog({
                   className={`${fieldClass} flex cursor-pointer items-center gap-2 border border-input px-3 py-2 text-sm text-muted-foreground hover:bg-accent`}
                 >
                   <Paperclip className="size-4 shrink-0" aria-hidden="true" />
-                  <span className="truncate">
-                    {fileName || "Choose a file (PDF, DOC, DOCX)"}
-                  </span>
+                  <span className="truncate">{fileName || "Choose a file (PDF, DOC, DOCX)"}</span>
                 </label>
                 <input
                   id="submission-file"
@@ -169,7 +166,7 @@ export function SubmitNewsDialog({
                     ))}
                   </SelectContent>
                 </Select>
-                {errors['type'] && <p className={errClass}>{errors['type']}</p>}
+                {errors["type"] && <p className={errClass}>{errors["type"]}</p>}
               </div>
 
               {type === "Other" && (
@@ -183,7 +180,7 @@ export function SubmitNewsDialog({
                     className={fieldClass}
                     placeholder="Tell us what kind of contribution this is"
                   />
-                  {errors['otherType'] && <p className={errClass}>{errors['otherType']}</p>}
+                  {errors["otherType"] && <p className={errClass}>{errors["otherType"]}</p>}
                 </div>
               )}
 
@@ -196,7 +193,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Title of your contribution"
                 />
-                {errors['title'] && <p className={errClass}>{errors['title']}</p>}
+                {errors["title"] && <p className={errClass}>{errors["title"]}</p>}
               </div>
 
               <div>
@@ -209,7 +206,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="you@example.com"
                 />
-                {errors['email'] && <p className={errClass}>{errors['email']}</p>}
+                {errors["email"] && <p className={errClass}>{errors["email"]}</p>}
               </div>
 
               <div>
@@ -221,7 +218,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="Full name"
                 />
-                {errors['author'] && <p className={errClass}>{errors['author']}</p>}
+                {errors["author"] && <p className={errClass}>{errors["author"]}</p>}
               </div>
 
               <div>
@@ -233,7 +230,7 @@ export function SubmitNewsDialog({
                   className={fieldClass}
                   placeholder="https://www.linkedin.com/in/…"
                 />
-                {errors['linkedin'] && <p className={errClass}>{errors['linkedin']}</p>}
+                {errors["linkedin"] && <p className={errClass}>{errors["linkedin"]}</p>}
               </div>
 
               <button
