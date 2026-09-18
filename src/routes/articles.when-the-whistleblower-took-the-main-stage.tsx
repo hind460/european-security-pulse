@@ -105,7 +105,7 @@ function CybersecArticlePage() {
               Its most powerful example came from a whistleblower willing to make an
               uncomfortable warning public.
             </p>
-            <p className="meta mt-6">By K. El Bouhmi & M. Molina Barea</p>
+            <p className="meta mt-6">By K. El Bouhmi & R. Molina Barea</p>
           </header>
 
           <figure className="mx-auto max-w-[1440px] px-0 sm:px-6">
