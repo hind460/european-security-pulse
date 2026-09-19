@@ -19,6 +19,15 @@ export const leadStory: Story = {
 
 export const latestDevelopments: Story[] = [
   {
+    category: "Ethical hacking",
+    headline:
+      "OpenAI ‘ethically hacked’ with help of Anthropic’s Claude chatbot",
+    summary:
+      "Researchers used Anthropic’s Claude chatbot to carry out an ethical hack of OpenAI’s systems, exposing a security flaw.",
+    publisher: "OpenAI",
+    url: "https://www.theguardian.com/technology/2026/sep/18/openai-hacked-anthropic-claude-chatbot",
+  },
+  {
     category: "Cybercrime",
     headline: "Revolut data breach and Italian government email hijack",
     summary:
