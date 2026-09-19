@@ -98,17 +98,21 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="border-t border-border">
           <div className="mx-auto hidden max-w-[1440px] items-center gap-8 px-5 md:px-10 lg:flex">
-            {navItems.map((item, i) => (
-              <a
-                key={item}
-                href={navHref[item]}
-                className={`link-underline py-3.5 text-xs font-bold tracking-[0.07em] uppercase transition-colors hover:text-signal ${
-                  i === 0 ? "text-signal" : "text-foreground"
-                }`}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item, i) => {
+              const href = navHref[item];
+              const className = `link-underline py-3.5 text-xs font-bold tracking-[0.07em] uppercase transition-colors hover:text-signal ${
+                i === 0 ? "text-signal" : "text-foreground"
+              }`;
+              return href.startsWith("#") ? (
+                <a key={item} href={href} className={className}>
+                  {item}
+                </a>
+              ) : (
+                <Link key={item} to={href} className={className}>
+                  {item}
+                </Link>
+              );
+            })}
             <button
               type="button"
               aria-label="Search"
