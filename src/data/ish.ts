@@ -39,6 +39,8 @@ export const latestDevelopments: Story[] = [
     category: "Regulation",
     headline:
       "Commission publishes new guidance for Cyber Resilience Act implementation",
+    summary:
+      "New implementation guidance is published to support organisations preparing for the Cyber Resilience Act.",
     publisher: "European Commission",
     url: "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
   },
@@ -46,6 +48,8 @@ export const latestDevelopments: Story[] = [
     category: "Resilience",
     headline:
       "Cyber Europe 2026 tests the EU's collective response to infrastructure disruption",
+    summary:
+      "The pan-European exercise puts the Union's collective response and resilience under scrutiny.",
     publisher: "ENISA",
     url: "https://www.enisa.europa.eu/news/cyber-europe-2026-all-eyes-on-the-eus-collective-response-and-resilience",
   },
@@ -53,6 +57,8 @@ export const latestDevelopments: Story[] = [
     category: "Threat Landscape",
     headline:
       "European markets watchdog warns that AI is accelerating systemic cyber risk",
+    summary:
+      "Europe's markets watchdog says cyber threats are growing as artificial intelligence speeds up risk.",
     publisher: "Reuters",
     url: "https://www.reuters.com/world/europes-markets-watchdog-warns-cyber-threats-are-growing-ai-speeds-up-risks-2026-04-24/",
   },
