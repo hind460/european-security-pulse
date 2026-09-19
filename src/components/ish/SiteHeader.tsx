@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/ish-heart.svg";
 import { navHref, navItems } from "@/data/ish";
 import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";

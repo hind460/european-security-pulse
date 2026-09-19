@@ -245,7 +245,7 @@ export const navItems = [
 ];
 
 export const navHref: Record<string, string> = {
-  Latest: "#latest",
+  Latest: "/",
   Regulation: "#regulation",
   Innovation: "#innovation",
   Events: "#events",
