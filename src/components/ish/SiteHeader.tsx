@@ -99,7 +99,7 @@ export function SiteHeader() {
         <nav aria-label="Primary" className="border-t border-border">
           <div className="mx-auto hidden max-w-[1440px] items-center gap-8 px-5 md:px-10 lg:flex">
             {navItems.map((item, i) => {
-              const href = navHref[item];
+              const href = navHref[item]!;
               const className = `link-underline py-3.5 text-xs font-bold tracking-[0.07em] uppercase transition-colors hover:text-signal ${
                 i === 0 ? "text-signal" : "text-foreground"
               }`;
@@ -126,7 +126,7 @@ export function SiteHeader() {
             <div id="mobile-nav" className="lg:hidden">
               <ul className="mx-auto max-w-[1440px] px-5 pb-4">
               {navItems.map((item) => {
-                const href = navHref[item];
+                const href = navHref[item]!;
                 return (
                   <li key={item} className="border-b border-border last:border-0">
                     {href.startsWith("#") ? (
