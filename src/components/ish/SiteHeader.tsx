@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/ish-heart.svg";
 import { navHref, navItems } from "@/data/ish";
 import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";
@@ -97,17 +98,21 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="border-t border-border">
           <div className="mx-auto hidden max-w-[1440px] items-center gap-8 px-5 md:px-10 lg:flex">
-            {navItems.map((item, i) => (
-              <a
-                key={item}
-                href={navHref[item]}
-                className={`link-underline py-3.5 text-xs font-bold tracking-[0.07em] uppercase transition-colors hover:text-signal ${
-                  i === 0 ? "text-signal" : "text-foreground"
-                }`}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item, i) => {
+              const href = navHref[item]!;
+              const className = `link-underline py-3.5 text-xs font-bold tracking-[0.07em] uppercase transition-colors hover:text-signal ${
+                i === 0 ? "text-signal" : "text-foreground"
+              }`;
+              return href.startsWith("#") ? (
+                <a key={item} href={href} className={className}>
+                  {item}
+                </a>
+              ) : (
+                <Link key={item} to={href} className={className}>
+                  {item}
+                </Link>
+              );
+            })}
             <button
               type="button"
               aria-label="Search"
@@ -120,17 +125,30 @@ export function SiteHeader() {
           {open && (
             <div id="mobile-nav" className="lg:hidden">
               <ul className="mx-auto max-w-[1440px] px-5 pb-4">
-                {navItems.map((item) => (
+              {navItems.map((item) => {
+                const href = navHref[item]!;
+                return (
                   <li key={item} className="border-b border-border last:border-0">
-                    <a
-                      href={navHref[item]}
-                      onClick={() => setOpen(false)}
-                      className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
-                    >
-                      {item}
-                    </a>
+                    {href.startsWith("#") ? (
+                      <a
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
+                      >
+                        {item}
+                      </a>
+                    ) : (
+                      <Link
+                        to={href}
+                        onClick={() => setOpen(false)}
+                        className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
+                      >
+                        {item}
+                      </Link>
+                    )}
                   </li>
-                ))}
+                );
+              })}
               </ul>
             </div>
           )}
