@@ -125,17 +125,30 @@ export function SiteHeader() {
           {open && (
             <div id="mobile-nav" className="lg:hidden">
               <ul className="mx-auto max-w-[1440px] px-5 pb-4">
-                {navItems.map((item) => (
+              {navItems.map((item) => {
+                const href = navHref[item];
+                return (
                   <li key={item} className="border-b border-border last:border-0">
-                    <a
-                      href={navHref[item]}
-                      onClick={() => setOpen(false)}
-                      className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
-                    >
-                      {item}
-                    </a>
+                    {href.startsWith("#") ? (
+                      <a
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
+                      >
+                        {item}
+                      </a>
+                    ) : (
+                      <Link
+                        to={href}
+                        onClick={() => setOpen(false)}
+                        className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
+                      >
+                        {item}
+                      </Link>
+                    )}
                   </li>
-                ))}
+                );
+              })}
               </ul>
             </div>
           )}
