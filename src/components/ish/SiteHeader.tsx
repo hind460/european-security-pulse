@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/ish-heart.svg";
-import { navHref, navItems } from "@/data/ish";
+import { navHref, navItems, newNavItems } from "@/data/ish";
 import { SubmitNewsDialog } from "@/components/ish/SubmitNewsDialog";
 
 function useToday() {
@@ -104,8 +104,13 @@ export function SiteHeader() {
                 i === 0 ? "text-signal" : "text-foreground"
               }`;
               return href.startsWith("#") ? (
-                <a key={item} href={href} className={className}>
+                <a key={item} href={href} className={`${className} inline-flex items-center gap-1.5`}>
                   {item}
+                  {newNavItems.includes(item) && (
+                    <span className="bg-signal px-1.5 py-0.5 text-[9px] leading-none font-bold tracking-[0.1em] text-signal-foreground animate-pulse">
+                      NEW!
+                    </span>
+                  )}
                 </a>
               ) : (
                 <Link key={item} to={href} className={className}>
@@ -133,9 +138,14 @@ export function SiteHeader() {
                       <a
                         href={href}
                         onClick={() => setOpen(false)}
-                        className="block py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
+                        className="flex items-center gap-2 py-3 text-sm font-bold tracking-[0.07em] uppercase hover:text-signal"
                       >
                         {item}
+                        {newNavItems.includes(item) && (
+                          <span className="bg-signal px-1.5 py-0.5 text-[10px] leading-none font-bold text-signal-foreground">
+                            NEW!
+                          </span>
+                        )}
                       </a>
                     ) : (
                       <Link
