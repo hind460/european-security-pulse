@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, CalendarDays, MapPin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CalendarDays, Download, MapPin } from "lucide-react";
+import { tools } from "@/data/ish";
 
 import { SiteHeader } from "@/components/ish/SiteHeader";
 import { SiteFooter } from "@/components/ish/SiteFooter";
@@ -231,6 +232,49 @@ function Index() {
               {curatedStories.map((s) => (
                 <StoryCard key={s.url + s.headline} story={s} />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TOOLS */}
+        <section id="tools" aria-labelledby="tools-title" className="scroll-mt-32 border-b border-border">
+          <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10">
+            <div className="flex items-center gap-3">
+              <SectionTag>Tools</SectionTag>
+              <span className="bg-signal px-2 py-0.5 text-[10px] font-bold tracking-[0.12em] text-signal-foreground uppercase">
+                New
+              </span>
+            </div>
+            <h2 id="tools-title" className="mt-3 font-serif text-2xl font-bold md:text-3xl">
+              Practical resources to download
+            </h2>
+            <div className="mt-8 overflow-x-auto border border-border bg-card">
+              <table className="w-full text-left text-sm">
+                <thead className="border-b border-border bg-muted text-xs font-bold tracking-[0.07em] uppercase">
+                  <tr>
+                    <th scope="col" className="px-5 py-3">Tool name</th>
+                    <th scope="col" className="px-5 py-3">Useful for</th>
+                    <th scope="col" className="px-5 py-3"><span className="sr-only">Download</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tools.map((t) => (
+                    <tr key={t.name} className="border-b border-border last:border-0">
+                      <td className="px-5 py-4 font-serif font-bold">{t.name}</td>
+                      <td className="px-5 py-4 text-muted-foreground">{t.usefulFor}</td>
+                      <td className="px-5 py-4 text-right">
+                        <a
+                          href={t.file}
+                          download={t.fileName}
+                          className="inline-flex items-center gap-1 text-xs font-bold whitespace-nowrap text-signal uppercase hover:underline"
+                        >
+                          Download PDF <Download className="size-4 shrink-0" aria-hidden="true" />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

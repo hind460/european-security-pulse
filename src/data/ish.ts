@@ -233,8 +233,21 @@ export const organisations = [
   },
 ];
 
+export const tools = [
+  {
+    name: "Digital Resilience Card — Food & Essentials (NL + EU)",
+    usefulFor:
+      "Emergency numbers, official warnings, 72-hour preparedness advice and food support links for the Netherlands and Europe. Save it offline on your phone or PC.",
+    file: "/downloads/digital-resilience-card-nl-eu.pdf",
+    fileName: "digital-resilience-card-nl-eu.pdf",
+  },
+];
+
+export const newNavItems = ["Tools"];
+
 export const navItems = [
   "Latest",
+  "Tools",
   "Regulation",
   "Innovation",
   "Events",
@@ -246,6 +259,7 @@ export const navItems = [
 
 export const navHref: Record<string, string> = {
   Latest: "/",
+  Tools: "#tools",
   Regulation: "#regulation",
   Innovation: "#innovation",
   Events: "#events",
