@@ -199,12 +199,12 @@ export const events = [
     country: "DE",
   },
   {
-    title: "European Cyber Innovation Summit",
-    city: "Tallinn",
-    date: "Sample event · date to be confirmed",
+    title: "Barcelona Cyber Security Congress (BCC) 2026",
+    city: "Barcelona",
+    date: "3rd and 4th November 2026",
     format: "In person",
-    topic: "Start-ups and emerging technology",
-    country: "EE",
+    topic: "AI-powered security solutions, critical infrastructure resilience, and protection of corporate and industrial environments",
+    country: "ES",
   },
 ];
 
