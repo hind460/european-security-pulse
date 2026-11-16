@@ -454,7 +454,7 @@ function Index() {
                     {e.country && (
                       <span
                         className="inline-flex h-3 w-5 overflow-hidden rounded-[2px] border border-border"
-                        aria-label={e.country === "NL" ? "Netherlands" : e.country === "DE" ? "Germany" : e.country === "EE" ? "Estonia" : e.country}
+                        aria-label={e.country === "NL" ? "Netherlands" : e.country === "DE" ? "Germany" : e.country === "EE" ? "Estonia" : e.country === "ES" ? "Spain" : e.country}
                         role="img"
                       >
                         <span className="flex flex-col w-full">
@@ -470,6 +470,13 @@ function Index() {
                               <span className="block h-1/3 w-full bg-[#000000]" />
                               <span className="block h-1/3 w-full bg-[#DD0000]" />
                               <span className="block h-1/3 w-full bg-[#FFCE00]" />
+                            </>
+                          )}
+                          {e.country === "ES" && (
+                            <>
+                              <span className="block h-1/4 w-full bg-[#AA151B]" />
+                              <span className="block h-1/2 w-full bg-[#F1BF00]" />
+                              <span className="block h-1/4 w-full bg-[#AA151B]" />
                             </>
                           )}
                           {e.country === "EE" && (
